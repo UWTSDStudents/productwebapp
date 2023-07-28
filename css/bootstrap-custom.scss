@@ -1,0 +1,10 @@
+// You can customize Bootstrap by overriding variables and including additional styles here
+// For example, you can change colors, fonts, or other styles
+// Make sure to import Bootstrap SCSS entry point first
+
+// Variable overrides within the same Sass file can come before or after the default variables. 
+// However, when overriding across Sass files, your overrides must come before you import Bootstrap’s Sass files.
+
+@import '~bootstrap/scss/bootstrap';
+
+// Your customizations go here
