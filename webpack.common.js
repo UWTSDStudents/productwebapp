@@ -34,11 +34,6 @@ module.exports = {
               },
         ],
     },
-    plugins: [
-        new webpack.DefinePlugin({
-          'process.env.REACT_APP_PRODUCTS_API_URL': JSON.stringify('http://localhost:1340'),
-        }),
-    ],
 //   devServer: {
 //     contentBase: path.resolve(__dirname, 'dist'),
 //     compress: true,

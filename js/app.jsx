@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-import ProductsView from './components/ProductsView.jsx';
-import { readAllProducts } from './products';
+import ProductsTable from './components/ProductsTable.jsx';
 import AddProductForm from './components/AddProductForm.jsx';
+import { readAllProducts } from './products';
  
 function App() {
   const [activeTab, setActiveTab] = useState({'add-product': 'active', 'display-products': ''});
@@ -16,8 +16,7 @@ function App() {
     {
       setProducts(await readAllProducts());
       console.log("Read products");
-    }
-
+    }  
   };
 
   return (
@@ -33,8 +32,8 @@ function App() {
         </li>
       </ul>
       <div className="tab-content" id="myTabContent">
-        <div className="tab-pane fade show active" id="add-product-tab-pane" role="tabpanel" aria-labelledby="add-product-tab" tabindex="0"><AddProductForm /></div>
-        <div className="tab-pane fade" id="display-products-tab-pane" role="tabpanel" aria-labelledby="display-products-tab" tabindex="1"><ProductsView products={products} /></div>
+        <div className="tab-pane fade show active" id="add-product-tab-pane" role="tabpanel" aria-labelledby="add-product-tab" tabIndex="0"><AddProductForm /></div>
+        <div className="tab-pane fade" id="display-products-tab-pane" role="tabpanel" aria-labelledby="display-products-tab" tabIndex="1"><ProductsTable products={products} setProducts={setProducts} /></div>
       </div>
     </div>
   );
