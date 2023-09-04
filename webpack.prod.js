@@ -6,7 +6,7 @@ module.exports = merge(common, {
     mode: 'production',
     plugins: [
         new webpack.DefinePlugin({
-        'process.env.REACT_APP_PRODUCTS_API_URL': JSON.stringify('http://myWebApp.azurewebsites.net/'),
+        'process.env.REACT_APP_PRODUCTS_API_URL': JSON.stringify('http://myWebApp16964.azurewebsites.net/'),
         }),
     ],
 });
