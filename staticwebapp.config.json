@@ -1,0 +1,56 @@
+{
+    "routes": [
+      {
+        "route": "/html/hello.html",
+        "allowedRoles": ["anonymous", "authenticated"]
+      },
+      {
+        "route": "/html/*.{html,htm}",
+        "allowedRoles": ["authenticated"]
+      },
+      {
+        "route": "/css/*.css",
+        "allowedRoles": ["authenticated"]
+      },
+      {
+        "route": "/images/*.{png,jpg,gif}",
+        "allowedRoles": ["authenticated"]
+      },
+      {
+        "route": "/js/*.{js,jsx}",
+        "allowedRoles": ["authenticated"]
+      },
+      {
+        "route": "/dist/*.{js,jsx}",
+        "allowedRoles": ["authenticated"]
+      },
+      {
+        "route": "/admin/*",
+        "allowedRoles": ["administrator"]
+      },
+      {
+        "route": "/*",
+        "redirect": "/html/index.html",
+        "allowedRoles": ["authenticated"]
+      }
+    ],
+    "navigationFallback": {
+      "rewrite": "/html/index.html",
+      "exclude": ["/images/*.{png,jpg,gif}", "/css/*.css", "/js/*.{js,jsx}", "/dist/*.{js,jsx}"]
+    },
+    "responseOverrides": {
+      "400": {
+        "rewrite": "/invalid-invitation-error.html"
+      },
+      "401": {
+        "statusCode": 302,
+        "redirect": "/.auth/login/aad"
+      },
+      "403": {
+        "rewrite": "/custom-forbidden-page.html"
+      },
+      "404": {
+        "rewrite": "/custom-404.html"
+      }
+    }
+  }
