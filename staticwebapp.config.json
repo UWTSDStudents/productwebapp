@@ -2,40 +2,40 @@
     "routes": [
       {
         "route": "/html/hello.html",
-        "allowedRoles": ["anonymous", "authenticated"]
+        "allowedRoles": ["anonymous", "authenticated", "owner"]
       },
       {
         "route": "/html/*.{html,htm}",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["authenticated", "owner"]
       },
       {
         "route": "/css/*.css",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["authenticated", "owner"]
       },
       {
         "route": "/images/*.{png,jpg,gif}",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["authenticated", "owner"]
       },
       {
         "route": "/js/*.{js,jsx}",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["authenticated", "owner"]
       },
       {
         "route": "/dist/*.{js,jsx}",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["authenticated", "owner"]
       },
       {
         "route": "/admin/*",
-        "allowedRoles": ["administrator"]
+        "allowedRoles": ["administrator", "owner"]
       },
       {
         "route": "/*",
-        "redirect": "/index.html",
-        "allowedRoles": ["authenticated"]
+        "redirect": "/html/index.html",
+        "allowedRoles": ["authenticated", "owner"]
       }
     ],
     "navigationFallback": {
-      "rewrite": "/index.html",
+      "rewrite": "/html/index.html",
       "exclude": ["/images/*.{png,jpg,gif}", "/css/*.css", "/js/*.{js,jsx}", "/dist/*.{js,jsx}"]
     },
     "responseOverrides": {
