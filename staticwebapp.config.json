@@ -30,12 +30,12 @@
       },
       {
         "route": "/*",
-        "redirect": "/html/index.html",
+        "redirect": "/index.html",
         "allowedRoles": ["authenticated", "owner"]
       }
     ],
     "navigationFallback": {
-      "rewrite": "/html/index.html",
+      "rewrite": "/index.html",
       "exclude": ["/images/*.{png,jpg,gif}", "/css/*.css", "/js/*.{js,jsx}", "/dist/*.{js,jsx}"]
     },
     "responseOverrides": {
